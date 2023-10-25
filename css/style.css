@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #1977cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3291e6;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/* TOPBAR */
+#topbar {
+  background: #fff;
+  height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+  z-index: 996;
+}
+
+#topbar.topbar-scrolled {
+  top: -40px;
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #444444;
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: #1977cc;
+}
+
+#topbar .contact-info i {
+  color: #1977cc;
+  padding-right: 4px;
+  margin-left: 15px;
+  line-height: 0;
+}
+
+#topbar .contact-info i:first-child {
+  margin-left: 0;
+}
+
+#topbar .social-links a {
+  color: #437099;
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+  color: #1977cc;
+}
+
+#topbar .social-links a:first-child {
+  border-left: 0;
+}
