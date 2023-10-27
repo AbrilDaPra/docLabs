@@ -107,8 +107,8 @@
         if (navbar.classList.contains('navbar-mobile')) {
           navbar.classList.remove('navbar-mobile')
           let navbarToggle = select('.mobile-nav-toggle')
-          navbarToggle.classList.toggle('bi-list')
-          navbarToggle.classList.toggle('bi-x')
+          navbarToggle.classList.toggle('fa-solid fa-bars')
+          navbarToggle.classList.toggle('fa-solid fa-x')
         }
         scrollto(this.hash)
       }
@@ -129,15 +129,15 @@
       });
     }
 
-    const glightbox = GLightbox({
-      selector: '.glightbox'
-    });
+    // const glightbox = GLightbox({
+    //   selector: '.glightbox'
+    // });
   
-    const galelryLightbox = GLightbox({
-      selector: '.galelry-lightbox'
-    });
-  
-    new Swiper('.testimonials-slider', {
+    // const galelryLightbox = GLightbox({
+    //   selector: '.galelry-lightbox'
+    // });
+
+    const swiper = new Swiper('.testimonials-slider', {
       speed: 600,
       loop: true,
       autoplay: {
@@ -162,7 +162,41 @@
         }
       }
     });
-  
-    new PureCounter();
-  
   })()
+
+let doctors = 22;
+let departments = 5;
+let researchLabs = 4;
+let awards = 7;
+
+let counters = [
+  { element: document.getElementById("doctorsCounter"), count: doctors },
+  { element: document.getElementById("departmentsCounter"), count: departments },
+  { element: document.getElementById("researchLabsCounter"), count: researchLabs },
+  { element: document.getElementById("awardsCounter"), count: awards },
+];
+
+function updateCounter(counterElement, counter){
+    counterElement.textContent = counter.toString();
+}
+
+function startCounter(counterElement, count){
+  console.log("Starting counter for element", counterElement);
+
+  if(!counterElement.dataset.intervalStarted){
+    counterElement.dataset.intervalStarted = true;
+    let currentCount = 0;
+    let interval = setInterval(() => {
+      updateCounter(counterElement, currentCount);
+      currentCount++;
+      if (currentCount > count) {
+          clearInterval(interval);
+          counterElement.dataset.intervalStarted = false;
+      }
+  }, 100);
+  }
+}
+
+window.addEventListener('load', () => {
+  counters.forEach(counter => startCounter(counter.element, counter.count));
+});

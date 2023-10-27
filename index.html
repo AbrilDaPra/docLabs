@@ -10,6 +10,8 @@
         <link rel="shortcut icon" href="./img/doctors/doctors-1.jpg" type="image/x-icon">
         <!-- TYPOGRAPHY -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- SWIPER LIBRARY -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/style.css">
         <!-- BOOTSTRAP -->
@@ -37,42 +39,42 @@
 
       <!-- HEADER -->
       <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-
-          <h1 class="logo me-auto"><a href="index.html">docLab</a></h1>
-    
-          <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-              <li><a class="nav-link scrollto" href="#about">About</a></li>
-              <li><a class="nav-link scrollto" href="#services">Services</a></li>
-              <li><a class="nav-link scrollto" href="#departments">Departments</a><li>
-              <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-              <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            </ul>
-            <i class="fa-solid fa-bars"></i>
-          </nav>
-    
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary container d-flex align-items-center order-last order-lg-0">
+          <div class="container-fluid">
+            <h1 class="logo me-auto"><a href="index.html">docLab</a></h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-mobilenavbar-mobile">
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li><a class="nav-link scrollto" href="#departments">Departments</a><li>
+                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
+                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                      <ul>
+                        <li><a href="#">Deep Drop Down 1</a></li>
+                        <li><a href="#">Deep Drop Down 2</a></li>
+                        <li><a href="#">Deep Drop Down 3</a></li>
+                        <li><a href="#">Deep Drop Down 4</a></li>
+                        <li><a href="#">Deep Drop Down 5</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                  </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
           <a href="#contact" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-    
-        </div>
+        </nav>
       </header>
 
       <!-- HERO -->
@@ -100,7 +102,7 @@
                     Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
                   </p>
                   <div class="text-center">
-                    <a href="#" class="more-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#contact" class="more-btn">Learn More <i class="fa-solid fa-chevron-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -182,7 +184,9 @@
               <div class="col-lg-3 col-md-6">
                 <div class="count-box">
                   <i class="fas fa-user-md"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+                  <div class="counter">
+                    <span id="doctorsCounter" class="counter-value">0</span>
+                  </div>
                   <p>Doctors</p>
                 </div>
               </div>
@@ -190,7 +194,9 @@
               <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                 <div class="count-box">
                   <i class="far fa-hospital"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+                  <div class="counter">
+                    <span id="departmentsCounter" class="counter-value">0</span>
+                  </div>
                   <p>Departments</p>
                 </div>
               </div>
@@ -198,7 +204,9 @@
               <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                 <div class="count-box">
                   <i class="fas fa-flask"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+                  <div class="counter">
+                    <span id="researchLabsCounter" class="counter-value">0</span>
+                  </div>
                   <p>Research Labs</p>
                 </div>
               </div>
@@ -206,7 +214,9 @@
               <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                 <div class="count-box">
                   <i class="fas fa-award"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+                  <div class="counter">
+                    <span id="awardsCounter" class="counter-value">0</span>
+                  </div>
                   <p>Awards</p>
                 </div>
               </div>
@@ -602,7 +612,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             <div class="swiper-pagination"></div>
           </div>
@@ -787,10 +796,10 @@
     
           <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
-              &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+              &copy; Copyright <strong><span>docLab</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-              Developed and designed by <a href="#">Abril Da Prá</a>
+              Developed and designed by <a href="https://abydapradeveloper.netlify.app/" target="_blank">Abril Da Prá</a>
             </div>
           </div>
           <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -808,6 +817,8 @@
 
       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <!-- SWIPER -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       <script src="./js/main.js"></script>
     </body>
 </html>
